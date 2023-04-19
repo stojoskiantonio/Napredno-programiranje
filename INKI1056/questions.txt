@@ -1,0 +1,10 @@
+Koga e HTML pronajden? A)1993 B)1997 C)1999
+Sto se koristi za pecatenje vo c++? A) cin B) int C) cout
+Glaven grad na Makedonija e A) Kocani B) Skopje C) Bitola
+Bitola ima nekade okolu A) 85000 ziteli B) 40000 ziteli C) 100000 ziteli
+Markovite kuli se naogjaat vo A) Prilep B) Kumanovo C) Kutlesevo
+Edinica mera za tecnost e A) Kilogram B) Vat C) Litar
+Albert Ajnstajn bil A) Kockar B) Naucnik C) Vitez
+Dzejms Vat izmislil A) Telefon B) Parna masina C) Internet
+Najtrofeen klub vo liga na sampionite e A) Pobeda prilep B) Pelister C) Real Madrid
+Makedonija stanala nezavisna vo A) 1991 B) 1941 C) 1999
