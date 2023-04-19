@@ -90,17 +90,20 @@ int main() {
     if (questions.is_open()) {
         string question, answer;
         int questionNumber = 1;
+        ofstream outfile(fileName.c_str(), ios_base::app);
         while (getline(questions, question)) {
             cout <<question<<endl;
             getline(cin, answer);
             if (checkAnswer(questionNumber, answer)) { // se dodavaat poeni za tocen odgovor
                 points+= 10;
-            } 
+            }
+            outfile <<"Odgovor: "<<answer<<endl; //  Zapisuvanje na odgovor
             questionNumber++; // prefrluvanje na sledno prasanje
         }
         questions.close();
+        outfile.close();
     } else {
-        cout <<"Unable to open file"<<endl;
+        cout <<"Ne moze da se otvori fajlot"<<endl;
         return 1;
     }
 
@@ -117,7 +120,7 @@ int main() {
     string endTimeStr = buffer;
 
 
-    ofstream outfile(fileName.c_str());
+    ofstream outfile(fileName.c_str(), ios_base::app);
     outfile <<"Starting time: "<<startTimeStr<<endl;
     outfile <<"Name: " <<firstName<<" "<<lastName<<endl;
     outfile <<"Index: "<<index<<endl;
