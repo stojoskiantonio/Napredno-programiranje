@@ -121,12 +121,12 @@ int main() {
 
 
     ofstream outfile(fileName.c_str(), ios_base::app);
-    outfile <<"Starting time: "<<startTimeStr<<endl;
-    outfile <<"Name: " <<firstName<<" "<<lastName<<endl;
-    outfile <<"Index: "<<index<<endl;
-    outfile <<"Points: "<<points<<endl;
-    outfile <<"Grade: "<<calculateGrade(points)<<endl;
-    outfile <<"End of quiz time: "<<endTimeStr<<endl;
+    outfile <<"Vreme za pocetok: "<<startTimeStr<<endl;
+    outfile <<"Ime: " <<firstName<<" Prezime: "<<lastName<<endl;
+    outfile <<"Indeks: "<<index<<endl;
+    outfile <<"Poeni: "<<points<<endl;
+    outfile <<"Ocena: "<<calculateGrade(points)<<endl;
+    outfile <<"Kraj na kviz: "<<endTimeStr<<endl;
     outfile.close();
 
     printResultsToFile(firstName, lastName, index, startTimeStr, endTimeStr); // pecatenje na rezultati za korisnikot
