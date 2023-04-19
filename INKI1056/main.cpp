@@ -82,10 +82,6 @@ int main() {
         return 0;
     }
 
-    ofstream outfile(fileName.c_str());
-    outfile <<"Name: " <<firstName<<" "<<lastName<<endl;
-    outfile <<"ID: "<<index<<endl;
-    outfile.close();
 
     auto now = chrono::system_clock::now();
     time_t startTime = chrono::system_clock::to_time_t(now);
@@ -114,16 +110,23 @@ int main() {
 
     cout <<"Osvoivte " <<points<<" poeni"<<endl;
     cout <<"Vasata ocenka e "<<calculateGrade(points)<<endl;
-    
-
     char buffer[80];
     strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", localtime(&startTime)); // konverzija na pocetno vreme vo string
     string startTimeStr = buffer;
     strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", localtime(&endTime)); // konverzija na krajno vreme vo string
     string endTimeStr = buffer;
 
+
+    ofstream outfile(fileName.c_str());
+    outfile <<"Starting time: "<<startTimeStr<<endl;
+    outfile <<"Name: " <<firstName<<" "<<lastName<<endl;
+    outfile <<"Index: "<<index<<endl;
+    outfile <<"Points: "<<points<<endl;
+    outfile <<"Grade: "<<calculateGrade(points)<<endl;
+    outfile <<"End of quiz time: "<<endTimeStr<<endl;
+    outfile.close();
+
     printResultsToFile(firstName, lastName, index, startTimeStr, endTimeStr); // pecatenje na rezultati za korisnikot
 
     return 0;
 }
-
