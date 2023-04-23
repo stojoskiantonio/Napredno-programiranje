@@ -3,32 +3,36 @@
 #include <string>
 #include <ctime>
 #include <chrono>
+#include <algorithm>
 
 using namespace std;
 
-bool checkAnswer(int questionNumber, string answer) { // proverka za dali e odgovorot tocen na prasanjata
-    if (questionNumber == 1 && answer == "A") {
-        return true;
-    } else if (questionNumber == 2 && answer == "C") {
-        return true;
-    } else if (questionNumber == 3 && answer == "B") {
-        return true;
-    } else if (questionNumber == 4 && answer == "A") {
-        return true;
-    } else if (questionNumber == 5 && answer == "A") {
-        return true;
-    } else if (questionNumber == 6 && answer == "C") {
-        return true;
-    } else if (questionNumber == 7 && answer == "B") {
-        return true;
-    } else if (questionNumber == 8 && answer == "B") {
-        return true;
-    } else if (questionNumber == 9 && answer == "C") {
-        return true;
-    } else if (questionNumber == 10 && answer == "A") {
-        return true;
-    } else {
-        return false;
+bool checkAnswer(int questionNumber, std::string answer) {
+    std::transform(answer.begin(), answer.end(), answer.begin(), ::toupper); // algoritam za odgovorite da ne bidat case sensitive
+    
+    switch (questionNumber) {
+        case 1:
+            return answer == "A";
+        case 2:
+            return answer == "C";
+        case 3:
+            return answer == "B";
+        case 4:
+            return answer == "A";
+        case 5:
+            return answer == "A";
+        case 6:
+            return answer == "C";
+        case 7:
+            return answer == "B";
+        case 8:
+            return answer == "B";
+        case 9:
+            return answer == "C";
+        case 10:
+            return answer == "A";
+        default:
+            return false;
     }
 }
 
@@ -80,7 +84,7 @@ int main() {
         exists = true;
         cout <<"Vie veke ste igrale ednas!"<<endl;
         return 0;
-    }
+    }   
 
 
     auto now = chrono::system_clock::now();
@@ -133,3 +137,5 @@ int main() {
 
     return 0;
 }
+
+
